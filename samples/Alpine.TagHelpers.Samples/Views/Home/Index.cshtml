@@ -1,0 +1,19 @@
+﻿@{
+  ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+  <h1 class="display-4">Welcome</h1>
+  <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+  <div alpine-data="new { Open = false }">
+    <button class="btn btn-primary"
+            x-on:click="open = !open">
+      Show
+    </button>
+    <div x-cloak
+         x-show="open">
+      Some details...
+    </div>
+  </div>
+</div>
