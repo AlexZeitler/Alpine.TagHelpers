@@ -6,6 +6,6 @@ public class JavaScriptConverterTests
   public void ShouldSerializeObject()
   {
     var result = JavaScriptConverter.SerializeObject(new { Name = "Jane" }).ToString();
-    Assert.Equal("{name:'Jane'}", result);
+    result.ShouldBe("{name:'Jane'}");
   }
 }
