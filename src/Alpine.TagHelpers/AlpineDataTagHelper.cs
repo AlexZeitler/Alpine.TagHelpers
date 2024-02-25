@@ -8,7 +8,7 @@ namespace Alpine.TagHelpers;
 /// This will ultimately hold the javascript serialized object without property name quotes.
 /// </summary>
 [HtmlTargetElement("*", Attributes = "alpine-data")]
-public class AlpineTagHelper : TagHelper
+public class AlpineDataTagHelper : TagHelper
 {
   /// <inheritdoc />
   public override void Process(
