@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "alpinejs@3.13.5",
+      "destination": "wwwroot/lib/alpinejs",
+      "files": [
+        "dist/cdn.min.js"
+      ]
+    }
+  ]
+}

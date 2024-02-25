@@ -1,0 +1,22 @@
+@model Alpine.TagHelpers.Samples.Components.NavigationItemTagHelper.NavigationItem
+
+@{
+  var linkClasses = Model.Hrefs.Any(x => Context.Request.Path.StartsWithSegments(x, StringComparison.OrdinalIgnoreCase))
+    ? "bg-gray-100 text-gray-700 font-semibold"
+    : "text-gray-600 hover:bg-gray-50 hover:text-gray-900";
+
+
+  var iconClasses = Model.Hrefs.Any(x => Context.Request.Path.StartsWithSegments(x, StringComparison.OrdinalIgnoreCase))
+    ? "text-gray-700"
+    : "text-gray-400 group-hover:text-gray-500";
+}
+
+<a class="group flex items-center rounded-md px-2 py-2 text-sm font-medium @linkClasses"
+   href="@Model.Href">
+  @if (Model.Icon is not null)
+  {
+    <heroicon-outline class="mr-3 h-6 w-6 flex-shrink-0 @iconClasses"
+                      icon="@Model.Icon.Value"/>
+  }
+  @Model.Text
+</a>

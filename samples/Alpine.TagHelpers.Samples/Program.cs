@@ -1,8 +1,15 @@
+using Alpine.TagHelpers.Samples;
+using Microsoft.AspNetCore.Mvc.Razor;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews()
   .AddRazorRuntimeCompilation();
+
+builder.Services.Configure<RazorViewEngineOptions>(
+  o => o.ViewLocationExpanders.Add(new FeatureFolderLocationExpander())
+);
 
 var app = builder.Build();
 
@@ -23,7 +30,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
   name: "default",
-  pattern: "{controller=Home}/{action=Index}/{id?}"
+  pattern: "{controller=GetHome}/{action=GetHome}/{id?}"
 );
 
 app.Run();
